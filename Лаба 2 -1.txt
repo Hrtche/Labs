@@ -1,0 +1,43 @@
+Решение квадратного уравнения 
+Алешин Иван Сергеевич ПИ-2-1
+
+
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+float f, z, v, d, x1, x2;
+
+void func()
+{
+    d = z * z - (4 * f * v);
+    if (d > 0) {
+        x1 = (-z + sqrt(d)) / (2 * f);
+        x2 = (-z - sqrt(d)) / (2 * f);
+        cout << "Ответ: " << endl;
+        cout << "   x1 = " << x1 << endl;
+        cout << "   x2 = " << x2 << endl;
+    } else if (d == 0) {
+        x1 = (z * -1 / (2 * f));
+        cout << "Ответ: " << endl;
+        cout << "   x = " << x1 << endl;
+    } else {
+        cout << "Ответ: " << endl;
+        cout << "   Корней нет";
+    }
+}
+
+int main()
+{
+    setlocale(0, "");
+    cout << "Решение неполных и полных квадратных уравнений. ax^2+bx+c" << endl;
+    cout << "Введите f: ";
+    cin >> f;
+    cout << "Введите z: ";
+    cin >>z;
+    cout << "Введите v: ";
+    cin >> v;
+    func();
+    return 0;
+}

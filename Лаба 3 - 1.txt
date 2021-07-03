@@ -1,0 +1,45 @@
+Исключение из массива всех отрицательных чисел. 
+Алешин Иван Сергеевич ПИ-2-1
+
+
+#include <iostream>
+using namespace std;
+int main() {
+setlocale(LC_ALL, "Russian");
+std::cout << "Задание №1" << endl;
+int length;
+// Ввод количества чисел массива
+std::cout << "Введите количество чисел: ";
+std::cin >> length;
+int* numbers = new int[length];
+for (int i = 0; i < length; i++) {
+numbers[i] = rand() % 100 - 50;
+}
+std::cout << "Исходный массив: ";
+for (int i = 0; i < length; i++) {
+std::cout << numbers[i] << " ";
+}
+std::cout << endl;
+int lengthPositiveNumbersArray = 0, currentElement = 0;
+for (int i = 0; i < length; i++) {
+if (numbers[i] >= 0) {
+lengthPositiveNumbersArray++;
+}
+}
+int* positiveNumbers = new int[lengthPositiveNumbersArray];
+for (int i = 0; i < length; i++) { // Исключение отрицательных чисел
+if (numbers[i] >= 0) {
+positiveNumbers[currentElement] = numbers[i];
+currentElement++;
+}
+}
+// Вывод массива без отрицательных чисел
+std::cout << "Массив без отрицательных чисел: ";
+for (int i = 0; i < lengthPositiveNumbersArray; i++) {
+std::cout << positiveNumbers[i] << " ";
+}
+std::cout << endl;
+delete[] numbers;
+delete[] positiveNumbers;
+return 0;
+}

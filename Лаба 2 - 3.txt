@@ -1,0 +1,19 @@
+Сортировка массива из 10 элементов методом "пузырька". 
+Алешин Иван Сергеевич ПИ-2-1
+
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+int  main()
+ 
+{   const int M=10;
+setlocale(LC_ALL, "Russian");
+int a[M];
+int n;
+for(int i=0;i<M;i++)
+{a[i]=rand()%100;
+cout<<a[i]<<" ";
+}
+cout<<'\n'<<endl;
+cout<<"Количество шагов цикла:"<<M<<endl;
+}

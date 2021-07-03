@@ -1,0 +1,19 @@
+Нахождение случайного числа в заданном диапазоне. 
+Алешин Иван Сергеевич ПИ-2-1
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int g, o, x;
+cout << "G: ";
+cin >> g; //Ввод начала интервала
+cout << endl;
+cout << "O: ";
+cin >> o; //Ввод конца интервала
+cout << endl;
+x = g + rand() % (o - g + 1); //Случайное число в диапазоне от g до o
+cout << x;
+return 0;
+}

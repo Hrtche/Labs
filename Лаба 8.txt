@@ -1,0 +1,81 @@
+Составить программу, которая будет считывать введённое пятизначное число. После чего, каждую цифру этого числа необходимо вывести в новой строке.
+
+Напишите программу, которая позволяет пользователю ввести в консоли латинскую букву нижнего регистра, переводит её в верхний регистр и результат выводит в консоль.
+
+Написать функцию, подсчитывающую среднее арифметическое целого массива. Предварительно объявив и, при необходимости, инициализировав переменные.
+
+При помощи вашей групповой почты вы получите доступ к папкам в Яндекс.Диске. Создайте внутри папки на каждого из вас с ФИО, а внутри вашей личной закиньте отчеты по лабораторным работам в формате .doc.
+
+Если формы отчета нет, то это документ, где указаны ФИО, группа, текстовое описание задания и код с комментариями. 
+
+Алешин Иван Сергеевич ПИ-2-1
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void first_task() 
+{
+    cout << "First Task" << endl;
+    cout << "=============" << endl;
+
+    string number;
+
+    cout << "Enter number: ";
+    cin >> number;
+
+    for (int i = 0; i < number.length(); i++)
+    {
+        cout << number[i] << endl;
+    }
+}
+
+
+void second_task() 
+{
+    cout << "Second Task" << endl;
+    cout << "=============" << endl;
+
+    char c;
+
+    cout << "Enter char: ";
+    cin >> c;
+
+    putchar(toupper(c));
+}
+
+
+void third_task() 
+{
+    cout << "Third Task" << endl;
+    cout << "=============" << endl;
+
+    int size;
+    int sum;
+
+    cout << "Enter array's size: ";
+    cin >> size;
+
+    int *arr = new int[size];
+    sum = 0;
+
+    for (int i = 0; i < size; i++) 
+    {
+        cout << "Enter number to index: ";
+        cin >> arr[i];
+        sum += arr[i];
+    }
+
+    sum /= size;
+
+    cout << sum << endl;
+}
+
+int main() {
+    first_task();
+    second_task();
+    third_task();
+    return 0;
+}

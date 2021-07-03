@@ -1,0 +1,139 @@
+Написать программу, которая заменяет все четные числа в целочисленном статическом массиве на 0. (массив из 10 элементов)
+
+Ввод символа с клавиатуры (с проверкой что это именно символ), ввод строки с клавиатуры (с проверкой что это именно строка). Вывод в консоль номера, который символ занимает в строке, если он там есть. Если нет — вывод сообщения об отсутствии символа.
+
+Расчет определителя матрицы, матрица размером 3 на 3. Ввод чисел построчно. Числа только целые.
+
+Алешин Иван Сергеевич ПИ-2-1
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void first_task()
+{
+    cout << "First Task" << endl;
+    cout << "=============" << endl;
+
+    // Массив
+    int arr[10];
+
+    // Ввод массива
+    for (int i = 0; i < 10; i++)
+    {
+        cout << "arr[" << i << "] : ";
+        cin >> arr[i];
+    }
+    cout << "=============" << endl;
+
+    // Вывод массива
+    cout << "Your array: " << endl;
+    cout << "[ ";
+    for (int i = 0; i < 10; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "]" << endl;
+
+    // Обработка массива
+    for (int i = 0; i < 10; i++)
+    {
+        if (arr[i] % 2 == 0)
+        {
+            arr[i] = 0;
+        }
+    }
+
+    // Вывод обработанного массива
+    cout << "Result: " << endl;
+    cout << "[ ";
+    for (int i = 0; i < 10; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "]" << endl;
+
+}
+
+void second_task()
+{
+    cout << "Second Task" << endl;
+    cout << "=============" << endl;
+    
+    char symbol;
+    string s;
+
+    do {
+        cout << "Enter symbol: ";
+        cin >> symbol;
+    } while (!isdigit(symbol) && !isalpha(symbol));
+
+
+    cout << "Enter string: ";
+    cin >> s;
+
+
+    if (s.find(symbol) != s.npos)
+        cout << "Founded " << symbol << " at " << s.find(symbol) + 1 << endl;
+    else
+        cout << "Not found" << endl;
+}
+
+
+void third_task()
+{
+    cout << "Third Task" << endl;
+    cout << "=============" << endl;
+
+    // Матрица и определитель
+    int matrix[3][3];
+    int determinant;
+
+    // Ввод матрицы
+    for (int y = 0; y < 3; y++)
+    {
+        for (int x = 0; x < 3; x++)
+        {
+            cout << "Enter [" << y << ", " << x << "] : ";
+            cin >> matrix[y][x];
+        }
+    }
+
+    // Вывод матрицы
+    cout << "Your matrix is: " << endl;
+    for (int y = 0; y < 3; y++)
+    {
+        for (int x = 0; x < 3; x++)
+        {
+            cout.width(3);
+            cout << matrix[y][x];
+        }
+        cout << endl;
+    }
+
+    // Находим определитель
+    determinant = matrix[0][0] * matrix[1][1] * matrix[2][2] +
+                  matrix[0][1] * matrix[1][2] * matrix[2][0] +
+                  matrix[0][2] * matrix[1][0] * matrix[2][1] -
+                  matrix[0][2] * matrix[1][1] * matrix[2][0] -
+                  matrix[0][1] * matrix[1][0] * matrix[2][2] -
+                  matrix[0][0] * matrix[1][2] * matrix[2][1];
+
+    // Выводим
+    cout << "Determinant: " << determinant << endl;
+}
+
+
+
+int main()
+{
+    setlocale(LC_ALL, "rus");
+
+    first_task();
+    second_task();
+    third_task();
+
+    return 0;
+}
